@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+
+        <img class="Logo" id="Logo" src="img/logo.jpg" alt="">
+
+        <nav>
+            <ul>
+                <li><a href="#">INICIO</a></li>
+                <li><a href="#portafolio">PORTAFOLIO</a></li>
+                <li><a href="#sobremi">SOBRE MÍ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div id="div1">
+        <h1 class="titulo">Portafolio Universitario</h1>
+        <img src="img/fondo.jpg" alt="">
+
+    </div>
+    <div id="portafolio">
+        <iframe name="contenedor" id="contentFrame" src="modelos3d.html"></iframe>
+    </div>
+
+    <!--
+    <section id="modelos3d">
+        <div id="contenedor3d">
+            <h2 class="heading">Modelos 3D</h2>
+            <div id="description">
+                <div class="description-item" id="description-item">
+                    <model-viewer id="modelViewer" src="models/astronautaEstratega.glb" ar
+                        ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp"
+                        shadow-intensity="1.3" shadow-softness="1" tone-mapping="neutral" exposure="1" auto-rotate>
+                    </model-viewer>
+                    <h2>Astronauta</h2>
+                    <div class="rating"></div>
+                    <p>Este modelo de Astronauta fue realizado para una colaboración en conjunto a la empresa
+                        "Cienart Studios". Junto al curso de Modelado Orgánico se trabajo durante todo un semestre,
+                        en distintos grupos para hacer sus propios modelos de astronautas. Este modelo de Astronauta
+                        está basado en la personalidad de un estratega nato.
+                    </p>
+                </div>
+                <div class="description-item" id="description-item">
+                    <model-viewer id="modelViewer" src="models/tazaTaz.glb" ar ar-modes="webxr scene-viewer quick-look"
+                        camera-controls poster="poster.webp" shadow-intensity="1.3" shadow-softness="1"
+                        tone-mapping="neutral" exposure="1" auto-rotate>
+                    </model-viewer>
+                    <h2>Taza Taz</h2>
+                    <div class="rating"></div>
+                    <p>La Taza Taz, uno de mis primeros modelos realizados en Blender. Uno de mis objetos
+                        creados en base a métricas simples de geometría pulida, <br>en base a una referencia
+                        de una taza real. <br>Este también fue el primer encuentro con texturizado y UV´s.
+                    </p>
+                </div>
+                <div class="description-item" id="description-item">
+                    <model-viewer id="modelViewer" src="models/kodama.glb" ar ar-modes="webxr scene-viewer quick-look"
+                        camera-controls poster="poster.webp" shadow-intensity="1.3" shadow-softness="1"
+                        tone-mapping="neutral" exposure="1" auto-rotate>
+                    </model-viewer>
+                    <h2>Kodama</h2>
+                    <div class="rating"></div>
+                    <p>Los kodamas son espíritus de la mitología de Japón, habitantes de los bosques espesos.<br>
+                        Modelo de Retopología de un modelo con exageradamente, muchas caras. En palabras simples
+                        este trabajo consistia en reducir las Caras y crear un modelo fiel al original.
+                    </p>
+                </div>
+                <div class="description-item" id="description-item">
+                    <model-viewer id="modelViewer" src="models/escenarioCasa.glb" ar
+                        ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp"
+                        shadow-intensity="1.3" shadow-softness="1" tone-mapping="neutral" exposure="1" auto-rotate>
+                    </model-viewer>
+                    <h2>Escenario de Video Juegos</h2>
+                    <div class="rating"></div>
+                    <p>Como un plano de una casa, este modelo contempla cocina, habitación, baño
+                        sala de estar y un comedor. Este trabajo consistia en modelar un ambiente
+                        de videojuegos desde blender hacia Unity.
+                    </p>
+                </div>
+                <div class="description-item" id="description-item">
+                    <model-viewer id="modelViewer" src="models/giroDBGT.glb" ar ar-modes="webxr scene-viewer quick-look"
+                        camera-controls poster="poster.webp" shadow-intensity="1.3" shadow-softness="1"
+                        tone-mapping="neutral" exposure="1" auto-rotate>
+                    </model-viewer>
+                    <h2>Giru</h2>
+                    <div class="rating"></div>
+                    <p>Giru es una máquina mutante que acompaña a Goku, Pan y Trunks en su búsqueda para
+                        encontrar las Esferas del Dragón de las Estrellas Negras. Este modelo está realizado
+                        en base pura a una referencia de imagen, en donde se uso distintos metodos de Modelado
+                        como modificadores para llegar a su forma "moldeada".
+                    </p>
+                </div>
+                <div class="description-item" id="description-item">
+                    <model-viewer id="modelViewer" src="models/niñoHonda.glb" ar
+                        ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp"
+                        shadow-intensity="1.3" shadow-softness="1" tone-mapping="neutral" exposure="1"
+                        animation-name="Running" auto-rotate>
+                    </model-viewer>
+                    <h2>Niño Low Poly</h2>
+                    <div class="rating"></div>
+                    <p>Modelo animable de un niño tipo "Chivi". <br>Modelado para Optimización de Videojuegos,<br> en
+                        busca de realizar
+                        huesos genéricos para animaciones simples, en conjunto a objetos como la honda y el cinturón.
+                    </p>
+                </div>
+            </div>
+    </section>
+
+    <section id="dibujos">
+        <div id="contenedordibujos">
+            <h2 class="heading">Dibujos</h2>
+            <div id="descriptiondibujos">
+                <div class="dibujos-item" id="dibujos-item">
+                    <img src="img/conceptArtP.png" alt="">
+                    <h2>Personaje "Átlas"</h2>
+                    <div class="rating"></div>
+                    <p>Repartidor con efímera personalidad, entusiasta y rápido, un destello fugaz
+                        que ilumina cada entrega con su energía inigualable. Este es un concepto
+                        de personaje realizado en Photoshop.
+                    </p>
+                </div>
+                <div class="dibujos-item" id="dibujos-item">
+                    <img src="img/animacionP.gif" alt="">
+                    <h2>Animación 2D</h2>
+                    <div class="rating"></div>
+                    <p>Animación realizada por cuadros definidos de 2 frames, a traves de Photoshop.
+                        Realizada para ser una entrega de examen, en base a una referencia de una
+                        escena del videojuego "Death Stranding".
+                    </p>
+                </div>
+                <div class="dibujos-item" id="dibujos-item">
+                    <img src="img/escenaP.jpg" alt="">
+                    <h2>Escenario Perspectiva</h2>
+                    <div class="rating"></div>
+                    <p>Esta es una escena realizada con un enfoque a diseñar videojuegos de estilo 2D
+                        con dialogos y secuencias de acciones definidas. El enfoque tambien radicó, en la
+                        implementacion de perspectiva con puntos de fuga, que dan la sensación de ser una
+                        escena 3D.
+                    </p>
+                </div>
+                <div class="dibujos-item" id="dibujos-item">
+                    <img src="img/ConceptArtPera.png" alt="">
+                    <h2>Personaje "Pera"</h2>
+                    <div class="rating"></div>
+                    <p>Uno de mis primeros Concept Art realizados en primer año. "Pera" fue un modelo
+                        de personaje hecho y pintado en Photoshop con distintas herramientas.
+                    </p>
+                </div>
+                <div class="dibujos-item" id="dibujos-item">
+                    <img src="img/fondoPera.jpg" alt="">
+                    <h2>Escena Videojuego 2D</h2>
+                    <div class="rating"></div>
+                    <p>Luego de diseñar mi primer concepto de personaje, diseñe una escena de videojuego
+                        estilo novela visual, con un enfoque a realizar un posible frame de videojuego, con
+                        interfaz de usuario incluida.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+-->
+    <section id="sobremi">
+        <h2 class="heading">Aníbal Pavez</h2>
+        <div class="info">
+            <img class="info-logo" src="img/logo.jpg" alt="Logo">
+            <p>Amante de los videojuegos, apasionado <span>Modelador 3D</span>, Game <span>Level</span> Desinger<br>
+                <span>Animador</span> iniciado, estudiante de <span>Realidad Virtual</span> y Diseño de Juegos
+                Digitales. <br>
+                Actualmente cursando <span>4°</span> año.
+            </p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-texto-izquierda">&copy; 2024</div>
+        <div class="footer-texto-derecha">Portafolio</div>
+    </footer>
+    <!--Pedro Pedro Pe!!-->
+    <audio id="audio" src="mp3/pedro.mp3" type="audio/mpeg"></audio>
+    <script>
+        var audio = document.getElementById('audio');
+        var isPlaying = false;
+
+        document.getElementById('Logo').addEventListener('click', function () {
+            if (!isPlaying) {
+                audio.play();
+                this.classList.add('girar');
+                isPlaying = true;
+            } else {
+                audio.pause();
+                audio.currentTime = 43;
+                this.classList.remove('girar');
+                isPlaying = false;
+            }
+        });
+
+    </script>
+</body>
+
+</html>

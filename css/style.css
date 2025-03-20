@@ -1,0 +1,786 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  caret-color: transparent;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --bg-color: #080808;
+  --second-bg-color: #131313;
+  --text-color: white;
+  --main-color: #00ffee;
+}
+
+html {
+  font-size: 60%;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+iframe {
+  width: 100%;
+  height: 250vh;
+  border: none;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 10% 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  /*Difuminado*/
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-weight: bold;
+}
+
+ul,
+li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+a {
+  font-size: 1.8rem;
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: aqua;
+}
+
+.Logo {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+
+section {
+  min-height: 100vh;
+  padding: 10rem 12% 10rem;
+}
+
+.heading {
+  font-size: 8rem;
+  text-align: center;
+  margin: 5rem 0;
+}
+
+
+ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+span {
+  color: var(--main-color);
+}
+
+/*Sección Modelos3d*/
+#modelos3d {
+  background: var(--second-bg-color);
+}
+
+/*Contenedores Div de sección Modelos 3D*/
+#contenedor3d {
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#contenedor3d model-viewer {
+  width: 33rem;
+  height: 33rem;
+  border: 3px solid var(--main-color);
+  box-shadow: 0 0 25px var(--main-color);
+}
+
+#description {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+#description-item {
+  min-height: 550px;
+  max-width: 450px;
+  background: rgb(0, 0, 0, 0.7);
+  border: 3px solid rgba(238, 238, 238, 0.2);
+  border-radius: 2rem;
+  margin: 0 2rem;
+  padding: 30px 60px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem;
+  color: white;
+  transition: 0.4s ease-in-out;
+}
+
+/*Efecto animación simple*/
+#description-item:hover {
+  border: 3px solid var(--main-color);
+  transform: translateY(-10px)scale(1.03);
+  box-shadow: 0 0 50px var(--main-color);
+}
+
+#description-item h2 {
+  font-size: 2.8rem;
+}
+
+#description-item p {
+  font-size: 1.5rem;
+}
+
+/*Sección Dibujos*/
+
+#dibujos {
+  background: var(--second-bg-color);
+}
+
+#contenedordibujos {
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#contenedordibujos img {
+  width: 100%;
+  height: 100%;
+}
+
+#descriptiondibujos {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 3rem;
+}
+
+#dibujos-item {
+  min-height: 100%;
+  max-width: 100%;
+  background: rgb(0, 0, 0, 0.7);
+  border: 3px solid rgba(238, 238, 238, 0.2);
+  border-radius: 2rem;
+  margin: 0 2rem;
+  padding: 30px 60px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem;
+  color: white;
+  transition: 0.4s ease-in-out;
+}
+
+#dibujos-item:hover {
+  border: 3px solid var(--main-color);
+  transform: translateY(-10px)scale(1.03);
+  box-shadow: 0 0 50px var(--main-color);
+}
+
+#dibujos-item h2 {
+  font-size: 3rem;
+}
+
+#dibujos-item p {
+  font-size: 2rem;
+}
+
+/*Botones*/
+.btn {
+  padding: 1rem 2.8rem;
+  background: var(--main-color);
+  box-shadow: 0 0 25px var(--main-color);
+  border-radius: 4rem;
+  font-size: 3rcap;
+  color: black;
+  border: 2px solid transparent;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 50px var(--main-color);
+}
+
+.btn-group {
+  background: var(--second-bg-color);
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 5rem 0;
+}
+
+.btn-group a:nth-of-type(2) {
+  background-color: black;
+  color: var(--main-color);
+  border: 2px solid var(--main-color);
+  box-shadow: 0 0 25px transparent;
+}
+
+.btn-group a:nth-of-type(2):hover {
+  box-shadow: 0 0 25px var(--main-color);
+  background-color: var(--main-color);
+  color: black;
+}
+
+/*Estilo para Selección Dibujos*/
+.btn-groupd a:nth-of-type(1) {
+  background-color: black;
+  color: var(--main-color);
+  border: 2px solid var(--main-color);
+  box-shadow: 0 0 25px transparent;
+}
+
+.btn-groupd a:nth-of-type(1):hover {
+  box-shadow: 0 0 25px var(--main-color);
+  background-color: var(--main-color);
+  color: black;
+}
+
+/*Ancho del Scrollbar*/
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/*Color posición Scrollbar*/
+::-webkit-scrollbar-thumb {
+  background-color: aqua;
+}
+
+/*Largo del Scrollbar*/
+::-webkit-scrollbar-track {
+  background-color: #000;
+  width: 50px;
+}
+
+/*Imagen Fondo*/
+#div1 img {
+  width: 100%;
+}
+
+#div1 {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  grid-area: 1 / 1 / 2 / 7;
+  background-color: rgb(0, 0, 0);
+}
+
+/* Estilos para el footer */
+.footer {
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.footer-texto-izquierda,
+.footer-texto-derecha {
+  font-size: 15px;
+  margin: 0;
+}
+
+/* Estilos para la sección de información */
+.info {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.info-logo {
+  max-width: 400px;
+  border-radius: 50%;
+  box-shadow: 0 0 25px aqua;
+  margin-bottom: 50px;
+  transition: 0.4s ease-in-out;
+}
+
+.info-logo:hover {
+  border: 3px solid var(--main-color);
+  transform: translateY(-10px)scale(1.03);
+  box-shadow: 0 0 50px var(--main-color);
+}
+
+.Logo:hover {
+  border: 3px solid var(--main-color);
+  box-shadow: 0 0 50px var(--main-color);
+}
+
+.girar {
+  animation-name: girar;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  display: inline-blocks;
+  border: 3px solid var(--main-color);
+  transform: translateY(-10px)scale(1.03);
+  box-shadow: 0 0 50px var(--main-color);
+  transition: 4s ease-in-out;
+}
+
+.info p {
+  font-size: calc(1vw + 1vh + 1vmin);
+}
+
+/*Titulo Inicial*/
+.titulo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #00ffff;
+  text-shadow: -4px -4px 0 #000000, 5px -1px 0 #000,
+    -1px 1px 0 #000, 1px 1px 0 #000;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  max-height: 205px;
+  font-size: calc(3vw + 3vh + 3vmin);
+  margin: 0;
+  z-index: 1;
+}
+
+@keyframes girar {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  1% {
+    transform: rotate(3.6deg) scale(1.2);
+  }
+
+  2% {
+    transform: rotate(7.2deg) scale(1.2);
+  }
+
+  3% {
+    transform: rotate(10.8deg) scale(1);
+  }
+
+  4% {
+    transform: rotate(14.4deg) scale(1.2);
+  }
+
+  5% {
+    transform: rotate(18deg) scale(1);
+  }
+
+  6% {
+    transform: rotate(21.6deg) scale(1.2);
+  }
+
+  7% {
+    transform: rotate(25.2deg) scale(1);
+  }
+
+  8% {
+    transform: rotate(28.8deg) scale(1.2);
+  }
+
+  9% {
+    transform: rotate(32.4deg) scale(1);
+  }
+
+  10% {
+    transform: rotate(36deg) scale(1);
+  }
+
+  11% {
+    transform: rotate(39.6deg) scale(1.2);
+  }
+
+  12% {
+    transform: rotate(43.2deg) scale(1.2);
+  }
+
+  13% {
+    transform: rotate(46.8deg) scale(1);
+  }
+
+  14% {
+    transform: rotate(50.4deg) scale(1.2);
+  }
+
+  15% {
+    transform: rotate(54deg) scale(1);
+  }
+
+  16% {
+    transform: rotate(57.6deg) scale(1.2);
+  }
+
+  17% {
+    transform: rotate(61.2deg) scale(1);
+  }
+
+  18% {
+    transform: rotate(64.8deg) scale(1.2);
+  }
+
+  19% {
+    transform: rotate(68.4deg) scale(1);
+  }
+
+  20% {
+    transform: rotate(72deg) scale(1);
+  }
+
+  21% {
+    transform: rotate(75.6deg) scale(1.2);
+  }
+
+  22% {
+    transform: rotate(79.2deg) scale(1.2);
+  }
+
+  23% {
+    transform: rotate(82.8deg) scale(1);
+  }
+
+  24% {
+    transform: rotate(86.4deg) scale(1.2);
+  }
+
+  25% {
+    transform: rotate(90deg) scale(1);
+  }
+
+  26% {
+    transform: rotate(93.6deg) scale(1.2);
+  }
+
+  27% {
+    transform: rotate(97.2deg) scale(1);
+  }
+
+  28% {
+    transform: rotate(100.8deg) scale(1.2);
+  }
+
+  29% {
+    transform: rotate(104.4deg) scale(1);
+  }
+
+  30% {
+    transform: rotate(108deg) scale(1);
+  }
+
+  31% {
+    transform: rotate(111.6deg) scale(1);
+  }
+
+  32% {
+    transform: rotate(115.2deg) scale(1.2);
+  }
+
+  33% {
+    transform: rotate(118.8deg) scale(1);
+  }
+
+  34% {
+    transform: rotate(122.4deg) scale(1.2);
+  }
+
+  35% {
+    transform: rotate(126deg) scale(1);
+  }
+
+  36% {
+    transform: rotate(129.6deg) scale(1.2);
+  }
+
+  37% {
+    transform: rotate(133.2deg) scale(1);
+  }
+
+  38% {
+    transform: rotate(136.8deg) scale(1.2);
+  }
+
+  39% {
+    transform: rotate(140.4deg) scale(1);
+  }
+
+  40% {
+    transform: rotate(144deg) scale(1);
+  }
+
+  41% {
+    transform: rotate(147.6deg) scale(1);
+  }
+
+  42% {
+    transform: rotate(151.2deg) scale(1.2);
+  }
+
+  43% {
+    transform: rotate(154.8deg) scale(1);
+  }
+
+  44% {
+    transform: rotate(158.4deg) scale(1.2);
+  }
+
+  45% {
+    transform: rotate(162deg) scale(1);
+  }
+
+  46% {
+    transform: rotate(165.6deg) scale(1.2);
+  }
+
+  47% {
+    transform: rotate(169.2deg) scale(1);
+  }
+
+  48% {
+    transform: rotate(172.8deg) scale(1.2);
+  }
+
+  49% {
+    transform: rotate(176.4deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(1);
+  }
+
+  51% {
+    transform: rotate(183.6deg) scale(1);
+  }
+
+  52% {
+    transform: rotate(187.2deg) scale(1.2);
+  }
+
+  53% {
+    transform: rotate(190.8deg) scale(1);
+  }
+
+  54% {
+    transform: rotate(194.4deg) scale(1.2);
+  }
+
+  55% {
+    transform: rotate(198deg) scale(1);
+  }
+
+  56% {
+    transform: rotate(201.6deg) scale(1.2);
+  }
+
+  57% {
+    transform: rotate(205.2deg) scale(1);
+  }
+
+  58% {
+    transform: rotate(208.8deg) scale(1.2);
+  }
+
+  59% {
+    transform: rotate(212.4deg) scale(1);
+  }
+
+  60% {
+    transform: rotate(216deg) scale(1);
+  }
+
+  61% {
+    transform: rotate(219.6deg) scale(1);
+  }
+
+  62% {
+    transform: rotate(223.2deg) scale(1.2);
+  }
+
+  63% {
+    transform: rotate(226.8deg) scale(1);
+  }
+
+  64% {
+    transform: rotate(230.4deg) scale(1.2);
+  }
+
+  65% {
+    transform: rotate(234deg) scale(1);
+  }
+
+  66% {
+    transform: rotate(237.6deg) scale(1.2);
+  }
+
+  67% {
+    transform: rotate(241.2deg) scale(1);
+  }
+
+  68% {
+    transform: rotate(244.8deg) scale(1.2);
+  }
+
+  69% {
+    transform: rotate(248.4deg) scale(1);
+  }
+
+  70% {
+    transform: rotate(252deg) scale(1);
+  }
+
+  71% {
+    transform: rotate(255.6deg) scale(1);
+  }
+
+  72% {
+    transform: rotate(259.2deg) scale(1.2);
+  }
+
+  73% {
+    transform: rotate(262.8deg) scale(1);
+  }
+
+  74% {
+    transform: rotate(266.4deg) scale(1.2);
+  }
+
+  75% {
+    transform: rotate(270deg) scale(1);
+  }
+
+  76% {
+    transform: rotate(273.6deg) scale(1.2);
+  }
+
+  77% {
+    transform: rotate(277.2deg) scale(1);
+  }
+
+  78% {
+    transform: rotate(280.8deg) scale(1.2);
+  }
+
+  79% {
+    transform: rotate(284.4deg) scale(1);
+  }
+
+  80% {
+    transform: rotate(288deg) scale(1);
+  }
+
+  81% {
+    transform: rotate(291.6deg) scale(1);
+  }
+
+  82% {
+    transform: rotate(295.2deg) scale(1.2);
+  }
+
+  83% {
+    transform: rotate(298.8deg) scale(1);
+  }
+
+  84% {
+    transform: rotate(302.4deg) scale(1.2);
+  }
+
+  85% {
+    transform: rotate(306deg) scale(1);
+  }
+
+  86% {
+    transform: rotate(309.6deg) scale(1.2);
+  }
+
+  87% {
+    transform: rotate(313.2deg) scale(1);
+  }
+
+  88% {
+    transform: rotate(316.8deg) scale(1.2);
+  }
+
+  89% {
+    transform: rotate(320.4deg) scale(1);
+  }
+
+  90% {
+    transform: rotate(327.6deg) scale(1);
+  }
+
+  92% {
+    transform: rotate(331.2deg) scale(1.2);
+  }
+
+  93% {
+    transform: rotate(334.8deg) scale(1);
+  }
+
+  94% {
+    transform: rotate(338.4deg) scale(1.2);
+  }
+
+  95% {
+    transform: rotate(342deg) scale(1);
+  }
+
+  96% {
+    transform: rotate(345.6deg) scale(1.2);
+  }
+
+  97% {
+    transform: rotate(349.2deg) scale(1);
+  }
+
+  98% {
+    transform: rotate(352.8deg) scale(1.2);
+  }
+
+  99% {
+    transform: rotate(356.4deg) scale(1);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
