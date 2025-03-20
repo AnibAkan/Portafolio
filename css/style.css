@@ -119,11 +119,14 @@ span {
 }
 
 #contenedor3d model-viewer {
-  width: 33rem;
-  height: 33rem;
+  width: 100%;
+  max-width: 33rem;
+  height: auto;
+  aspect-ratio: 1 / 1;
   border: 3px solid var(--main-color);
   box-shadow: 0 0 25px var(--main-color);
 }
+
 
 #description {
   display: grid;
@@ -383,6 +386,11 @@ span {
   z-index: 1;
 }
 
+@media (max-width: 768px) {
+  #description {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 @keyframes girar {
   0% {
     transform: rotate(0deg) scale(1);
