@@ -33,7 +33,7 @@
     <section id="sobremi">
         <h2 class="heading">Aníbal Pavez</h2>
         <div class="info">
-            <img class="info-logo" src="img/logo.jpg" alt="Logo">
+            <img class="info-logo" src="img/anibal.jpg" alt="Logo">
             <p>Amante de los videojuegos, apasionado <span>Modelador 3D</span>, Game <span>Level</span> Desinger<br>
                 <span>Animador</span> iniciado, estudiante de <span>Realidad Virtual</span> y Diseño de Juegos
                 Digitales. <br>
@@ -55,29 +55,18 @@
         document.getElementById('Logo').addEventListener('click', function () {
             if (!isPlaying) {
                 audio.play();
+                audio.currentTime = 50.15;
                 this.classList.add('girar');
                 isPlaying = true;
             } else {
                 audio.pause();
-                audio.currentTime = 43;
+                audio.currentTime = 50.15;
                 this.classList.remove('girar');
                 isPlaying = false;
             }
         });
     </script>
 <!-- Solución Definitiva para IFrame-->
-<script>
-    // Escuchar el mensaje de cambio de altura desde el iframe
-    window.addEventListener('message', function(event) {
-        // Verificar que el mensaje provenga de un iframe seguro (misma carpeta)
-        if (event.origin !== window.location.origin) return;
-
-        if (event.data && event.data.altura) {
-            const iframe = document.getElementById('miIframe');
-            iframe.style.height = event.data.altura + 'px';
-        }
-    });
-</script>
 
 </body>
 
