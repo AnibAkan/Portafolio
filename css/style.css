@@ -47,32 +47,84 @@ iframe {
 header {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  padding: 2rem 10% 2rem;
-  background: rgba(0, 0, 0, 0.3);
-  /*Difuminado*/
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  z-index: 100;
+  padding: 1rem 2rem;
+}
+/* Container interno para logo y botón */
+.header-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  z-index: 5;
+  justify-content: space-between;
 }
 
-nav {
+header img.Logo {
+  height: 50px;;
+}
+.menu {
+  position: absolute;
+  top: 0;
+  right: 100%; /* Esto lo posiciona a la IZQUIERDA del botón */
+  transform: translateX(0);
+  opacity: 0;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 20px;
-  padding-left: 5%;
-  padding-right: 5%;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #222;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  transition: opacity 0.3s ease;
+  z-index: 999;
+  pointer-events: none;
+}
+.menu.active {
+  opacity: 1;
+  pointer-events: all;
+}
+/* Estilos del Menu */
+.menu-toggle {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 101;
+}
+/* ESTILO DEL MENU */
+nav.menu {
+  position: absolute;
+  top: 100%;
+  right: 1rem;
+  background-color: transparent;
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 100;
+}
+.menu.show {
+  display: flex;
+}
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.menu li a {
+  color: cyan;
+  text-decoration: none;
   font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s;
 }
 
-ul,
-li {
-  display: inline-block;
-  padding: 0px 20px;
+.menu li a:hover {
+  color: white;
+}
+nav.menu li a:hover {
+  color: var(--main-color);
 }
 
 a {
@@ -86,9 +138,9 @@ a:hover {
 }
 
 .Logo {
+  height: 60px;
+  height: auto;
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
   cursor: pointer;
   transition: 0.4s ease-in-out;
 }
@@ -127,6 +179,7 @@ span {
 #contenedor3d {
   background-size: cover;
   display: flex;
+  min-height: 400px;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -352,7 +405,9 @@ span {
 }
 
 .info-logo {
-  max-width: 400px;
+  width: 400px;
+  max-width: 100%;
+  height: auto;
   border-radius: 50%;
   box-shadow: 0 0 25px aqua;
   margin-bottom: 50px;
@@ -401,16 +456,154 @@ span {
   margin: 0;
   z-index: 1;
 }
-/*Ajuste para celulares*/
-@media (max-width: 768px) {
-  #description {
-      grid-template-columns: repeat(1, 1fr);
-  }
+
+
+
+nav {
+  position: absolute;
+  top: 100%;
+  right: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 0.3s ease;
 }
 
-@media (max-width: 480px) {
+nav ul {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+nav ul li {
+  display: block;
+  padding: 0;
+}
+
+
+/*Ajuste para celulares*/
+@media (max-width: 768px) {
+  html {
+    font-size: 50%; /* Disminuye un poco el tamaño base */
+  }
+
+  /* Padding al body para que no lo tape el header 
+  body {
+    padding-top: 60px;
+  }
+*/
+  /* Ajuste de secciones para navegación */
+  #div1,
+  #portafolio,
+  #sobremi {
+    scroll-margin-top: 60px;
+  }
+  header {
+    padding: 1.5rem 5%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  #miIframe {
+    width: 100%;
+    min-height: 600px;
+    border: none;
+  }
+  /*Nav nuevo*/
+  .menu-toggle {
+    display: block;
+  }
+
+  nav.menu {
+    position: absolute;
+    top: 100%;
+    right: 2rem;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: transparent;
+    padding: 1rem;
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  nav.menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  nav.menu ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  nav.menu li a {
+    color: cyan;
+    font-size: 1.2rem;
+  }
+  .Logo{
+    height: 45px;
+  }
+  li {
+    padding: 0;
+  }
+
+  a {
+    font-size: 2rem;
+  }
+
+  .heading {
+    font-size: 4rem;
+    margin: 3rem 0;
+  }
+
+  section {
+    padding: 8rem 5% 8rem;
+  }
+
   #description {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  #description-item {
+    margin: 0;
+    max-width: 100%;
+    padding: 2rem 3rem;
+  }
+
+  #contenedor3d model-viewer {
+    max-width: 100%;
+  }
+
+  #descriptiondibujos {
+    grid-template-columns: 1fr;
+  }
+
+  #dibujos-item {
+    padding: 2rem 3rem;
+    max-width: 100%;
+  }
+
+  .btn {
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+  }
+
+  .iframe-container {
+    height: auto;
+  }
+
+  iframe {
+    height: auto;
+  }
+
+  #miIframe {
+    min-height: 700px; /* Puedes ajustar este valor según el contenido */
   }
 }
 

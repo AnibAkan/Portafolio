@@ -11,15 +11,17 @@
 
 <body>
     <header>
-        <img class="Logo" id="Logo" src="img/logo.jpg" alt="Logo">
-
-        <nav>
-            <ul>
-                <li><a href="#">INICIO</a></li>
-                <li><a href="#portafolio">PORTAFOLIO</a></li>
-                <li><a href="#sobremi">SOBRE MÍ</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <img class="Logo" id="Logo" src="img/logo.jpg" alt="Logo">
+            <button class="menu-toggle" id="menuToggle">☰</button>        
+            <nav class="menu" id="mobileMenu">
+                <ul>
+                  <li><a href="#">INICIO</a></li>
+                  <li><a href="#portafolio">PORTAFOLIO</a></li>
+                  <li><a href="#sobremi">SOBRE MÍ</a></li>
+                </ul>
+              </nav>
+        </div>
     </header>
 
     <div id="div1">
@@ -28,7 +30,7 @@
     </div>
 
     <div id="portafolio">
-        <iframe name="contenedor" id="miIframe" src="modelos3d.html"  onload="ajustarAltura()"></iframe>
+        <iframe name="contenedor" id="miIframe" src="modelos3d.html"></iframe>
     </div>
 
     <section id="sobremi">
@@ -67,8 +69,13 @@
             }
         });
     </script>
-<!-- Solución Definitiva para IFrame-->
-
+<!-- Menú Hamburguesa-->
+<script>
+document.getElementById('menuToggle').addEventListener('click', () => {
+  const menu = document.getElementById('mobileMenu');
+  menu.classList.toggle('active');
+});
+  </script>
 </body>
 
 </html>
